@@ -21,8 +21,14 @@ form input[type=submit] {
 <body>
 <h3>Spring Boot + Thymeleaf + Material Design Lite</h3><br/>
 <h5>Cadastro de Pessoas</h5>
-
 <div class="row">
+
+<br/>
+	<div th:each = "m : ${msg}">
+		<span th:text = "${m}"></span>
+	</div>
+<br/>
+
 <form action="salvarpessoa" id="formpessoa" method="post" th:object="${pessoaobj}"class="col s12">
 
 			<div class="row">
