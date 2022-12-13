@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,7 +22,6 @@ import curso.springboot.model.Pessoa;
 import curso.springboot.model.Telefone;
 import curso.springboot.repository.PessoaRepository;
 import curso.springboot.repository.TelefoneRepository;
-import jakarta.validation.Valid;
 
 @Controller
 public class PessoaController {
