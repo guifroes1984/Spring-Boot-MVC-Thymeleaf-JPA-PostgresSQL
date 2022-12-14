@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+	  
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -52,7 +54,7 @@ form input[type=submit] {
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row" sec:authorize="hasAnyRole('ROLE_CAIXA')">
 				<div class="input-field col s12">
 					<label for="idade" class="active">Idade</label>
 					<input name="idade" th:field="*{idade}" id="idade" class="validate">
