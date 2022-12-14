@@ -51,22 +51,29 @@ form input[type=submit] {
 
 				<div class="intut-fiel col s6">
 					<label for="nome" class="active">Nome</label> 
-					<input name="nome" th:field="*{nome}" id="nome" class="validate">
+					<input placeholder="Informe o nome" name="nome" th:field="*{nome}" id="nome" class="validate">
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="input-field col s12">
 					<label for="sobrenome" class="active">Sobrenome</label> 
-						<input name="sobrenome" class="validate"
+						<input placeholder="Informe o sobrenome" name="sobrenome" class="validate"
 						th:field="*{sobrenome}" id="sobrenome">
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="input-field col s12">
+					<label for="idade" class="active">Idade</label>
+					<input name="idade" th:field="*{idade}" id="idade" class="validate">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
 					<label for="cep" class="active">Cep</label> 
-						<input name="cep" class="validate"
+						<input name="cep" class="validate" placeholder="Informe um Cep válido"
 						th:field="*{cep}" id="cep">
 				</div>
 			</div>
@@ -108,13 +115,6 @@ form input[type=submit] {
 					<label for="ibge" class="active">IBGE</label> 
 						<input name="ibge" class="validate"
 						th:field="*{ibge}" id="ibge">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12">
-					<label for="idade" class="active">Idade</label>
-					<input name="idade" th:field="*{idade}" id="idade" class="validate">
 				</div>
 			</div>
 
