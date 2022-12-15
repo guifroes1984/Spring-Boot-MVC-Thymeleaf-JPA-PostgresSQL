@@ -88,8 +88,16 @@ form input[type=submit] {
 				</div>
 				
 			</div>
+				<div class="input-field col s12">
+					<label for="cargo" class="active">Cargo</label>
+					<select class="browser-default" th:field="*{cargo}" id="cargo">
+						<option th:each = "c : ${T(curso.springboot.model.Cargo).values()}" 
+						th:value="${c.valor}" th:text="${c.nome}">
+					</select>
+				</div>
+			<div class="row">
 			
-				
+			</div>
 			
 			<div class="row">
 				<div class="input-field col s12">
