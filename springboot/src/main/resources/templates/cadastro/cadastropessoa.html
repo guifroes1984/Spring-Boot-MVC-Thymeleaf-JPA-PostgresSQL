@@ -148,7 +148,7 @@ form input[type=submit] {
 <fieldset>
  <legend>Campo de pesquisa</legend>
 	<div class="row">
-		<form action="pesquisarpessoa" method="post" class="col s12">
+		<form action="pesquisarpessoa" method="post" class="col s12" id="pesquisarpessoa">
 			<div class="row">
 				<div class="input-field col s6">
 					<label for="nomepesquisa" class="active">Pequisa por nome:</label>
@@ -166,6 +166,8 @@ form input[type=submit] {
 				</div>
 				
 				<div class="input-field col s12">
+					<input class="waves-effect waves-light btn" type="submit"
+						value="PDF" onclick="document.getElementById('pesquisarpessoa').method = 'get'">
 					<input class="waves-effect waves-light btn" type="submit"
 						value="Buscar">
 					<a class="waves-effect waves-ligth btn" href="/listapessoas">Lista Pessoas</a>
