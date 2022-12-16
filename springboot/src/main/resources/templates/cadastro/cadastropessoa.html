@@ -47,7 +47,8 @@ form input[type=submit] {
 	</div>
 <br/>
 
-<form action="salvarpessoa" id="formpessoa" method="post" th:object="${pessoaobj}"class="col s12">
+<form action="salvarpessoa" id="formpessoa" method="post" th:object="${pessoaobj}"class="col s12" 
+  enctype="multipart/form-data">
 
 			<div class="row">
 				<div class="intut-fiel col s6">
@@ -110,6 +111,13 @@ form input[type=submit] {
 					name="dataNascimento" placeholder="Data Nascimento">
 				</div>
 				
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<label for="file" class="active">Currículo</label>
+					<input type="file" id="file" name="file" class="validate">
+				</div>
 			</div>
 			
 			<div class="row">
