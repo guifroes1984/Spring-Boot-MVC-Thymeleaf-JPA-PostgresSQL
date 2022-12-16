@@ -12,6 +12,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
+            
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -28,6 +31,8 @@ form input[type=submit] {
 	color: white;
 }
 </style>
+
+
 </head>
 <body>
 <h3>Spring Boot + Thymeleaf + Material Design Lite</h3><br/>
@@ -87,16 +92,24 @@ form input[type=submit] {
 					</select>
 				</div>
 				
-			</div>
-				<div class="input-field col s12">
+			</div >
+			
+			<div class="row">
+			
+				<div class="input-field col s6">
 					<label for="cargo" class="active">Cargo</label>
 					<select class="browser-default" th:field="*{cargo}" id="cargo">
 						<option th:each = "c : ${T(curso.springboot.model.Cargo).values()}" 
 						th:value="${c.valor}" th:text="${c.nome}">
 					</select>
 				</div>
-			<div class="row">
-			
+				
+				<div class="input-field col s6">
+					<label for="dataNascimento" class="active">Data Nascimento:</label>
+					<input type="date" id="dataNascimento" th:field="*{dataNascimento}"
+					name="dataNascimento" placeholder="Data Nascimento">
+				</div>
+				
 			</div>
 			
 			<div class="row">
@@ -223,6 +236,12 @@ form input[type=submit] {
     <script type="text/javascript">
 
         $(document).ready(function() {
+        	
+        	$('#dataNascimento').datepicker({
+        		showOthermonths:true,
+        		format: 'yyyy-mm-dd'
+        	});
+        	
 
             function limpa_formulário_cep() {
                 // Limpa valores do formulário de cep.
