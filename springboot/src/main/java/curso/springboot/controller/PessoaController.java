@@ -76,12 +76,18 @@ public class PessoaController {
 			return modelAndView;
 		}
 		
-		if (file.getSize() > 0) {/*Cadastrando um novo currículo*/
+		if (file.getSize() > 0) {/*Cadastrando um novo currículo. Não informou nenhum arquivo novo*/
 			pessoa.setCurriculo(file.getBytes());
+			pessoa.setTipoFileCurriculo(file.getContentType());
+			pessoa.setNomeFileCurriculo(file.getOriginalFilename());
 		}else {
 			if (pessoa.getId() != null && pessoa.getId() > 0) {/*Editando a pessoa*/
-				byte[] curriculoTempo = pessoaRepository.findById(pessoa.getId()).get().getCurriculo();
-				pessoa.setCurriculo(curriculoTempo);/*Passando para esse objeto para manter o mesmo*/
+				
+				Pessoa pessoaTemp = pessoaRepository.findById(pessoa.getId()).get();/*Carrega a pessoa do banco de dados*/
+				
+				pessoa.setCurriculo(pessoaTemp.getCurriculo());/*Para esse novo registro que veio da tela*/
+				pessoa.setTipoFileCurriculo(pessoaTemp.getTipoFileCurriculo());/*Mantendo o currrículo, o tipo*/
+				pessoa.setNomeFileCurriculo(pessoaTemp.getNomeFileCurriculo());/*E o nome desse arquivo*/
 			}
 		}
 		
