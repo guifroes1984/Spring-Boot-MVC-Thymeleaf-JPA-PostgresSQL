@@ -130,11 +130,12 @@ public class PessoaController {
 	public ModelAndView editar(@PathVariable("idpessoa") Long idpessoa) {
 		
 		Optional<Pessoa> pessoa = pessoaRepository.findById(idpessoa);
-		
+
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		modelAndView.addObject("pessoaobj", pessoa.get());
 		modelAndView.addObject("profissoes", profissaoRepository.findAll());
 		return modelAndView;
+		
 	}
 	
 	@GetMapping("/removerpessoa/{idpessoa}")
